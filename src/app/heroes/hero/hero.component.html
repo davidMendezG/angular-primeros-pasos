@@ -1,0 +1,34 @@
+<h1 class="text-3xl">{{name}}</h1>
+
+<dl class="pl-3 my-5 mb-5">
+    <div class="mb-3">
+        <td>Nombre:</td>
+        <dd class="ml-10 text-xl font-semibold">{{ name }}</dd>
+    </div>
+
+    <div class="mb-3">
+        <td>Edad:</td>
+        <dd class="ml-10 text-xl font-semibold">{{ age }}</dd>
+    </div>
+
+    <div class="mb-3">q
+        <td>Metodo:</td>
+        <dd class="ml-10 text-xl font-semibold">{{ getHeroDescription() }}</dd>
+    </div>
+
+    <div class="mb-3">
+        <td>Capitalizado:</td>
+        <dd class="ml-10 text-xl font-semibold" q>{{ capitalizeName }}</dd>
+    </div>
+</dl>
+@if(name !== 'Spider-Man'){
+<button class="px-4 py-1 m-1 text-white bg-blue-600 rounded-lg hover:bg-blue-400" (click)="changeHero()">Cambiar
+    Nombre</button>
+}
+@if (age !== 25) {
+<button class="px-4 py-1 m-1 text-white bg-blue-600 rounded-lg hover:bg-blue-400" (click)="changeAge()">Cambiar
+    Edad</button>
+}
+@if(name==='Spider-Man' || age === 25){
+<button class="px-4 py-1 m-1 text-white bg-blue-600 rounded-lg hover:bg-blue-400" (click)="reset()">Reset</button>
+}

@@ -1,0 +1,11 @@
+<h1 class="text-2xl font-bold">DBZ Main Page</h1>
+<hr>
+
+<div class="grid grid-cols-2 mx-5 mt-5 max-w-[80%]">
+    <div class="mb-5">
+        <dbz-listado [characterList]="characters" (onDelete)="onDeleteCharacter($event)"></dbz-listado>
+    </div>
+    <div class="flex flex-col">
+        <dbz-add-character (onNewCharacter)="onNewCharacter($event)"></dbz-add-character>
+    </div>
+</div>

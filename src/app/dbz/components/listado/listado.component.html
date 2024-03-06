@@ -1,0 +1,21 @@
+@if (title) {
+<h4 class="font-bold">{{ title }}</h4>
+}@else {
+<h4 class="font-bold">Listado</h4>
+}
+<ul>
+    @for (character of characterList; track $index; let odd = $odd) {
+    <li class="flex justify-between py-1 border-b max-w-72 border-b-black"
+        [ngClass]="{ 'text-green-500' : $first, 'text-red-500' : $last }">
+        <div>
+            <span>{{ $index+1 }}. </span>
+            <span class="text-blue-500">{{ character.name }}</span> - Power:
+            <span class="font-semibold">{{ character.power }}</span>
+        </div>
+        <button class="px-2 mx-2 text-white bg-red-500 rounded-md" (click)="onDeleteCharacter(character.id)"> X
+        </button>
+    </li>
+    }@empty {
+    <li>no hay datos para mostrar...</li>
+    }
+</ul>

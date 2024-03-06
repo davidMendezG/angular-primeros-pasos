@@ -1,0 +1,22 @@
+<h3 class="text-3xl">Listado de Heroes</h3>
+<hr class="mt-2 mb-5">
+@if (deletedHero !== undefined) {
+<h3>Heroe Borrado Fue: <span class="font-semibold text-red-600">{{ getDeletedHero }}</span></h3>
+}@else {
+<h3>No se han eliminado heroes</h3>
+}
+<ul class="mt-2">
+    @for (name of heroNames; track $index) {
+    <li class="ml-5"> >{{ name }}</li>
+    }@empty {
+    <li class="ml-5">No hay heroes.</li>
+    }
+</ul>
+
+@if (heroNames.length > 0) {
+<button class="px-4 py-1 m-5 text-white bg-red-600 rounded-lg hover:bg-red-400" (click)="borrarUltimoHeroe()">Borrar
+    Ultimo Heroe</button>
+}@else {
+<button class="px-4 py-1 m-5 text-white bg-blue-600 rounded-lg hover:bg-blue-400" (click)="resetList()">Reset
+    List</button>
+}
